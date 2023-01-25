@@ -8,7 +8,6 @@ type SlideProps = {
 }
 
 export function Slide({active , slidePicture, slideIndex, caption, totalSlides} : SlideProps){
-    console.log(active)
     return (
         <div className={
             active 

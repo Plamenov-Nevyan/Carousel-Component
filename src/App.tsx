@@ -3,6 +3,7 @@ import styles from "./app.module.css"
 import { Buttons } from './components/Buttons/Buttons'
 import { Indicators } from './components/Indicators/Indicators'
 import { Slide } from './components/Slide/Slide'
+import uuid from "react-uuid"
 
 const pictures = [
   {src : "/image1.jpg", caption : "image 1"},
@@ -21,6 +22,7 @@ function App() {
     <>
   <div className={styles["carousel-container"]}>
          {pictures.map((pic, index) => <Slide 
+         key={uuid()}
          active = {currentSlide === index}
          slidePicture={pic.src} 
          slideIndex={index + 1} 
