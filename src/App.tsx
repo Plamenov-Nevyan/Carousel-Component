@@ -18,6 +18,7 @@ function App() {
   return (
   <div className={styles["carousel-container"]}>
          {pictures.map((pic, index) => <Slide 
+         active = {currentSlide === index}
          slidePicture={pic.src} 
          slideIndex={index + 1} 
          caption={pic.caption} 
@@ -26,7 +27,7 @@ function App() {
          )}
          <Buttons 
          isFirstSlide={currentSlide === 0} 
-         isLastSlide={currentSlide === pictures.length} 
+         isLastSlide={currentSlide === pictures.length - 1} 
          goToNextSlide={goToNextSlide}
           goToPreviousSlide={goToPreviousSlide}
          />

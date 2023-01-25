@@ -1,5 +1,8 @@
 .slide-container {
-    /* display: none; */
+    display: none;
+}
+.slide-container-active {
+    display: block;
 }
 .number-caption {
     color: #f2f2f2;
