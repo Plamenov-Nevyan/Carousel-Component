@@ -6,19 +6,21 @@
 }
 .number-caption {
     color: #f2f2f2;
-    font-size: 12px;
+    font-size: 30px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
 }
 .text-caption {
     color: #f2f2f2;
-    font-size: 15px;
+    font-size: 30px;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
+    background-color: black;
+    opacity: 0.4;
 }
 .slide-picture {
     width: 100%;

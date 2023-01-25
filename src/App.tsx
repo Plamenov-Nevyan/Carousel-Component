@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from "./app.module.css"
 import { Buttons } from './components/Buttons/Buttons'
+import { Indicators } from './components/Indicators/Indicators'
 import { Slide } from './components/Slide/Slide'
 
 const pictures = [
@@ -14,8 +15,10 @@ function App() {
 
   const goToNextSlide = () => setCurrentSlide(currSlide => currSlide + 1)
   const goToPreviousSlide = () => setCurrentSlide(currentSlide => currentSlide - 1)
+  const goToSlide = (slideIndex : number) => setCurrentSlide(slideIndex)
 
   return (
+    <>
   <div className={styles["carousel-container"]}>
          {pictures.map((pic, index) => <Slide 
          active = {currentSlide === index}
@@ -32,6 +35,8 @@ function App() {
           goToPreviousSlide={goToPreviousSlide}
          />
   </div>
+  <Indicators slides={pictures} currentSlide={currentSlide} goToSlide={goToSlide}/>
+  </>
   )
 }
 
