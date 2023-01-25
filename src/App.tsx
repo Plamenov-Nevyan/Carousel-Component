@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from "./app.module.css"
+import { Buttons } from './components/Buttons/Buttons'
 import { Slide } from './components/Slide/Slide'
 
 const pictures = [
@@ -9,7 +10,10 @@ const pictures = [
 ]
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const goToNextSlide = () => setCurrentSlide(currSlide => currSlide + 1)
+  const goToPreviousSlide = () => setCurrentSlide(currentSlide => currentSlide - 1)
 
   return (
   <div className={styles["carousel-container"]}>
@@ -20,6 +24,12 @@ function App() {
          totalSlides={pictures.length}
          />
          )}
+         <Buttons 
+         isFirstSlide={currentSlide === 0} 
+         isLastSlide={currentSlide === pictures.length} 
+         goToNextSlide={goToNextSlide}
+          goToPreviousSlide={goToPreviousSlide}
+         />
   </div>
   )
 }
